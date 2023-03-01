@@ -82,7 +82,7 @@ export default defineConfig({
   },
   // 生产环境打包配置
   //去除 console debugger
-  base: '/admin-web/',
+  base: '',
   build: {
     minify: 'terser',
     terserOptions: {
@@ -92,7 +92,7 @@ export default defineConfig({
       }
     },
     assetsDir: '',
-    // outDir: path.resolve(__dirname, '../resources/static'),
+    outDir: path.resolve(__dirname, './docs'),
     rollupOptions: {
       output: {
         chunkFileNames: 'js/[name]-[hash].js',

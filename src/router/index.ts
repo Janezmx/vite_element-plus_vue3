@@ -25,7 +25,7 @@ const routes: RouteRecordRaw[] = [
     { path: '/', redirect: '/home' }
 ]
 const router = createRouter({
-    history: createWebHashHistory('/admin-web/'),
+    history: createWebHashHistory(),
     routes
 })
 export default router
