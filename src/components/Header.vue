@@ -4,6 +4,10 @@
         <div class="info-bar">
             <el-dropdown trigger="click" @command="logout">
                     <span class="el-dropdown-link">
+                        <span>
+                            浏览量：<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>👀 |
+                            访客数：<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>👦
+                        </span>
                         <span class="user-name">{{userInfo.username}}</span>
                         <el-icon class="el-icon--right">
                             <arrow-down />
