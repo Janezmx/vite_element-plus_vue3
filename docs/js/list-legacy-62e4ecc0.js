@@ -1,1 +1,0 @@
-System.register(["./index-legacy-dd42c63d.js"],(function(e,t){"use strict";var r;return{setters:[e=>{r=e.$}],execute:function(){e({f:function(){return r({url:"/resource-api/list",method:"GET"})},s:function(e){return r({url:"/resource-api/submit",method:"POST",data:e})}})}}}));
