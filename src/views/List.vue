@@ -5,7 +5,7 @@
         </el-breadcrumb>
     </div>
     <hr>
-    <div>本页总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+    <!--<div>本页总阅读量<span id="busuanzi_value_page_pv"></span>次</div>-->
     <div v-loading="loading">
         <div style="margin: 10px 0;">
             <el-input v-model="query" style="width: 200px"/>

@@ -20,9 +20,15 @@
   import { fetchUserInfo } from '@/plugin/http/api/user'
   import zhCn from 'element-plus/lib/locale/lang/zh-cn'
   import useCurrentInstance from '@/plugin/global'
+  // import script from 'busuanzi.pure.js'
   const locale = ref(zhCn)
   const userStore = userInfoStore()
   const { Global } = useCurrentInstance()
+  // const route = useRoute()
+  // watch(() => route.fullPath, () => {
+  //   console.log('watch', route.fullPath)
+  //   script.fetch() // 总访问量也增加，并不是只计算当前页
+  // })
   onBeforeMount(() => {
     fetchUserInfo().then((res: any) => {
       userStore.updateInfo(res.data)

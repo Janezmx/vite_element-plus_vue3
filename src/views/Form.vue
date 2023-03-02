@@ -5,7 +5,7 @@
         </el-breadcrumb>
     </div>
     <hr>
-    <div>本页总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+    <!--<div>本页总阅读量<span id="busuanzi_value_page_pv"></span>次</div>-->
     <el-form ref="formRef" :model="formData" label-width="120px" :rules="rules" v-loading="loading">
         <el-form-item label="名字" prop="name">
             <el-input v-model.trim="formData.name" style="width: 215px;"></el-input>
