@@ -27,8 +27,6 @@
     import { ref, reactive, computed, onMounted } from 'vue'
     import { useRouter, onBeforeRouteUpdate } from 'vue-router'
     import { fetchList } from '@/plugin/http/api/list'
-    import useCurrentInstance from '@/plugin/global'
-    const { Global } = useCurrentInstance()
 
     const loading = ref(false)
     const query = ref('')
@@ -39,10 +37,7 @@
         fetchList().then((res: any) => {
             tableData.value = res.data || []
         }).catch((e:any) => {
-            Global.$message({
-                type: 'error',
-                message: e.message
-            })
+            ElMessage.error(e.message)
         }).finally(() => {
             loading.value = false
         })

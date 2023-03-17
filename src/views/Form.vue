@@ -30,8 +30,6 @@
 <script setup lang="ts">
     import {ref, reactive} from 'vue'
     import { submitForm } from '@/plugin/http/api/list'
-    import useCurrentInstance from '@/plugin/global'
-    const { Global } = useCurrentInstance()
     const loading = ref(false)
     const formData = reactive({
         name: '',
@@ -70,15 +68,9 @@
                         remark
                     }
                     submitForm(params).then(() => {
-                        Global.$message({
-                            type: 'success',
-                            message: '提交成功'
-                        })
+                        ElMessage.success('提交成功')
                     }).catch((e:any) => {
-                        Global.$message({
-                            type: 'error',
-                            message: `提交失败，原因：${e.message}`
-                        })
+                        ElMessage.error(`提交失败，原因：${e.message}`)
                     }).finally(() => {
                         loading.value = false
                     })

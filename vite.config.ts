@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 import * as path from 'path'
 import legacy from '@vitejs/plugin-legacy' // vite浏览器兼容
 import { viteMockServe } from 'vite-plugin-mock' // mock
@@ -12,7 +14,14 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [
+        ElementPlusResolver(),
+        // Auto import icon components
+        // 自动导入图标组件
+        IconsResolver({
+          prefix: 'Icon',
+        })
+      ],
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
         /\.vue$/,
@@ -32,7 +41,17 @@ export default defineConfig({
     }),
     Components({
       dirs: ['src/components'],
-      resolvers: [ElementPlusResolver()],
+      resolvers: [
+        ElementPlusResolver(),
+        // Auto register icon components
+        // 自动注册图标组件
+        IconsResolver({
+          enabledCollections: ['ep'], // 格式：<i-ep-menu />(menu可替换)
+        })
+      ],
+    }),
+    Icons({
+      autoInstall: true,
     }),
     legacy({
       targets: ['chrome >= 60'],
@@ -92,7 +111,7 @@ export default defineConfig({
       }
     },
     assetsDir: '',
-    outDir: path.resolve(__dirname, './docs'),
+    // outDir: path.resolve(__dirname, '../resources/static'),
     rollupOptions: {
       output: {
         chunkFileNames: 'js/[name]-[hash].js',

@@ -19,11 +19,9 @@
   import { userInfoStore } from '@/store/user'
   import { fetchUserInfo } from '@/plugin/http/api/user'
   import zhCn from 'element-plus/lib/locale/lang/zh-cn'
-  import useCurrentInstance from '@/plugin/global'
   // import script from 'busuanzi.pure.js'
   const locale = ref(zhCn)
   const userStore = userInfoStore()
-  const { Global } = useCurrentInstance()
   // const route = useRoute()
   // watch(() => route.fullPath, () => {
   //   console.log('watch', route.fullPath)
@@ -33,10 +31,7 @@
     fetchUserInfo().then((res: any) => {
       userStore.updateInfo(res.data)
     }).catch((e: any) => {
-      Global.$message({
-        type: 'error',
-        message: '获取登录信息失败，原因:' + e.message
-      })
+      ElMessage.error('获取登录信息失败，原因:' + e.message)
     })
   })
 </script>
