@@ -111,7 +111,7 @@ export default defineConfig({
       }
     },
     assetsDir: '',
-    // outDir: path.resolve(__dirname, '../resources/static'),
+    outDir: path.resolve(__dirname, './docs'),
     rollupOptions: {
       output: {
         chunkFileNames: 'js/[name]-[hash].js',
