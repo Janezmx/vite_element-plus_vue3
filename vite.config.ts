@@ -10,6 +10,7 @@ import legacy from '@vitejs/plugin-legacy' // vite浏览器兼容
 import { viteMockServe } from 'vite-plugin-mock' // mock
 
 // https://vitejs.dev/config/
+// @ts-ignore
 export default defineConfig({
   plugins: [
     vue(),

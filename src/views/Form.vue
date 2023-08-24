@@ -25,11 +25,15 @@
             <el-button>取消</el-button>
         </el-form-item>
     </el-form>
+    <!--inject，provide测试-->
+    <div v-for="user in users" :key="user.name">{{user.name}}</div>
 </template>
 
 <script setup lang="ts">
     import {ref, reactive} from 'vue'
     import { submitForm } from '@/plugin/http/api/list'
+    import { userKey } from '../keys'
+    const users = inject(userKey)
     const loading = ref(false)
     const formData = reactive({
         name: '',

@@ -1,6 +1,7 @@
 const Home = () => import('@/views/Home.vue')
 const Form = () => import('@/views/Form.vue')
 const List = () => import('@/views/List.vue')
+const Song = () => import('@/views/Song.vue')
 import {createRouter, createWebHashHistory, RouteRecordRaw} from "vue-router"
 const routes: RouteRecordRaw[] = [
     {
@@ -21,6 +22,11 @@ const routes: RouteRecordRaw[] = [
         path: '/list',
         name: 'list',
         component: List
+    },
+    {
+        path: '/song',
+        name: 'song',
+        component: Song
     },
     { path: '/', redirect: '/home' }
 ]

@@ -11,6 +11,7 @@
                 <el-menu-item index="/home" @click="toPage('Home')">Home</el-menu-item>
                 <el-menu-item index="/form" @click="toPage('Form')">表单</el-menu-item>
                 <el-menu-item index="/list" @click="toPage('List')">列表</el-menu-item>
+                <el-menu-item index="/song" @click="toPage('Song')">音乐</el-menu-item>
                 !<!-- 占位用字符，放止所有子菜单都隐藏后菜单栏消失 -->
             </el-menu>
         </el-scrollbar>
